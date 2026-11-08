@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11110f">
+  <meta name="description" content="ARIA brings together live violin and electronic music to create an unforgettable musical experience for weddings, luxury events and extraordinary places. Cape Town and beyond.">
+  <title>ARIA | Live Violin & DJ Experience</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark: #11110f;
+      --dark-soft: #191916;
+      --cream: #eee9df;
+      --muted: #aaa69c;
+      --gold: #c6aa7b;
+      --line: rgba(238,233,223,0.17);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      background: var(--dark);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 26px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 32px;
+      letter-spacing: 7px;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 38px;
+      align-items: center;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      transition: color .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      border: 1px solid var(--gold);
+      padding: 11px 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      color: var(--cream);
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 760px;
+      height: 100vh;
+      max-height: 1000px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(180deg, rgba(10,10,9,.45), rgba(10,10,9,.48) 45%, #11110f 100%),
+        url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=2400&q=85') center 48% / cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 100px 20px 30px;
+      animation: reveal 1.5s ease both;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(90px, 17vw, 190px);
+      letter-spacing: 18px;
+      line-height: 1;
+      margin-right: -18px;
+    }
+
+    .hero-subtitle {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-top: 22px;
+    }
+
+    .hero-description {
+      color: rgba(238,233,223,.8);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-top: 18px;
+    }
+
+    .hero-actions {
+      margin-top: 42px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 29px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: all .3s ease;
+    }
+
+    .button-gold {
+      background: var(--gold);
+      color: #171611;
+    }
+
+    .button-gold:hover {
+      background: var(--cream);
+    }
+
+    .button-outline {
+      border: 1px solid rgba(238,233,223,.65);
+    }
+
+    .button-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .scroll-note {
+      position: absolute;
+      bottom: 38px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 120px 9%;
+    }
+
+    .section-label {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.12;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .intro-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 2;
+      margin-top: 20px;
+    }
+
+    .intro-image {
+      min-height: 480px;
+      background:
+        linear-gradient(0deg, rgba(0,0,0,.1), transparent),
+        url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1200&q=85') center / cover;
+    }
+
+    .experience {
+      background: var(--dark-soft);
+      text-align: center;
+      padding: 125px 9%;
+    }
+
+    .experience h2 {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .experience-description {
+      max-width: 650px;
+      color: var(--muted);
+      margin: 28px auto 0;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      margin-top: 75px;
+      border: 1px solid var(--line);
+    }
+
+    .experience-item {
+      padding: 42px 24px;
+      background: var(--dark-soft);
+    }
+
+    .experience-item span {
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 36px;
+    }
+
+    .experience-item h3 {
+      font-family: var(--serif);
+      font-size: 25px;
+      font-weight: 400;
+      margin: 10px 0;
+    }
+
+    .experience-item p {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .performance {
+      text-align: center;
+    }
+
+    .performance h2 {
+      margin-bottom: 20px;
+    }
+
+    .performance p {
+      max-width: 600px;
+      color: var(--muted);
+      margin: 0 auto;
+      font-size: 14px;
+    }
+
+    .video-placeholder {
+      margin-top: 55px;
+      min-height: 430px;
+      background:
+        linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.65)),
+        url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1800&q=85') center / cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .play-button {
+      width: 76px;
+      height: 76px;
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      transition: all .3s;
+    }
+
+    .play-button:hover {
+      background: var(--gold);
+      color: var(--dark);
+      border-color: var(--gold);
+    }
+
+    .performance-caption {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .occasions {
+      background: var(--dark-soft);
+      text-align: center;
+    }
+
+    .occasion-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 60px;
+      text-align: left;
+    }
+
+    .occasion-card {
+      min-height: 370px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .occasion-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,.85), transparent 75%);
+      transition: background .3s;
+    }
+
+    .occasion-card:hover::before {
+      background: linear-gradient(0deg, rgba(0,0,0,.9), rgba(0,0,0,.1));
+    }
+
+    .occasion-one {
+      background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85');
+    }
+
+    .occasion-two {
+      background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=85');
+    }
+
+    .occasion-three {
+      background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85');
+    }
+
+    .occasion-text {
+      position: relative;
+      padding: 30px;
+    }
+
+    .occasion-text h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 32px;
+    }
+
+    .occasion-text p {
+      color: rgba(255,255,255,.7);
+      font-size: 11px;
+      margin-top: 5px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 560px;
+      background:
+        linear-gradient(0deg, rgba(0,0,0,.1), transparent),
+        url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1200&q=85') center / cover;
+    }
+
+    .about-copy p {
+      font-size: 14px;
+      line-height: 2;
+      color: var(--muted);
+      margin-top: 22px;
+    }
+
+    .about-signature {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-style: italic;
+      color: var(--gold);
+      margin-top: 30px;
+    }
+
+    .contact {
+      background: var(--dark-soft);
+      text-align: center;
+      padding: 130px 9%;
+    }
+
+    .contact h2 {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin: 25px auto 35px;
+      font-size: 14px;
+    }
+
+    .contact-email {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(20px, 3vw, 32px);
+      color: var(--gold);
+      margin-top: 35px;
+    }
+
+    footer {
+      padding: 35px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer .footer-logo {
+      font-family: var(--serif);
+      font-size: 25px;
+      letter-spacing: 5px;
+      color: var(--cream);
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 800px) {
+      .nav {
+        padding: 20px 6%;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 30px;
+        background: #171714;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 680px;
+        height: 90vh;
+      }
+
+      .hero h1 {
+        letter-spacing: 9px;
+        margin-right: -9px;
+      }
+
+      .section {
+        padding: 85px 7%;
+      }
+
+      .intro,
+      .about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .intro-image {
+        min-height: 380px;
+        order: -1;
+      }
+
+      .about-image {
+        min-height: 420px;
+      }
+
+      .experience-grid,
+      .occasion-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .occasion-card {
+        min-height: 330px;
+      }
+
+      .video-placeholder {
+        min-height: 280px;
+      }
+
+      .contact {
+        padding: 90px 7%;
+      }
+
+      footer {
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="#" class="logo">ARIA</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#experience">The Experience</a>
+      <a href="#performance">Watch & Listen</a>
+      <a href="#occasions">Occasions</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Enquire</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Cape Town · South Africa · Beyond</div>
+      <h1>ARIA</h1>
+      <div class="hero-subtitle">Live Violin & DJ Experience</div>
+      <p class="hero-description">Electronic music. Live improvisation. An unforgettable atmosphere.</p>
+      <div class="hero-actions">
+        <a href="#performance" class="button button-gold">Discover ARIA</a>
+        <a href="#contact" class="button button-outline">Enquire Now</a>
+      </div>
+    </div>
+    <div class="scroll-note">Scroll to discover &nbsp; ↓</div>
+  </header>
+
+  <section class="section intro" id="experience">
+    <div class="intro-copy">
+      <div class="section-label">The ARIA experience</div>
+      <h2>Where strings meet electronic sound.</h2>
+      <p>
+        A meeting of organic expression and electronic rhythm. ARIA brings live violin improvisation into the world of DJ performance, creating a sound that is immersive, unexpected and entirely in the moment.
+      </p>
+      <p>
+        Moving between atmospheric melodies, hypnotic rhythms and uplifting energy, each performance unfolds as a unique musical journey.
+      </p>
+    </div>
+    <div class="intro-image"></div>
+  </section>
+
+  <section class="experience">
+    <div class="section-label">More than music</div>
+    <h2>A live experience that moves with the moment.</h2>
+    <p class="experience-description">
+      The expressive voice of the violin meets carefully curated electronic music. Through live improvisation, mixing and musical interplay, ARIA creates an atmosphere that evolves with the setting, the energy and the people in the room.
+    </p>
+
+    <div class="experience-grid">
+      <div class="experience-item">
+        <span>01</span>
+        <h3>Live Violin</h3>
+        <p>Expressive melodies and spontaneous improvisation.</p>
+      </div>
+      <div class="experience-item">
+        <span>02</span>
+        <h3>Electronic Music</h3>
+        <p>Organic, melodic and atmospheric electronic sounds.</p>
+      </div>
+      <div class="experience-item">
+        <span>03</span>
+        <h3>One Performance</h3>
+        <p>A seamless fusion of musicianship and DJ performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section performance" id="performance">
+    <div class="section-label">Watch & listen</div>
+    <h2>Experience ARIA in motion.</h2>
+    <p>
+      An expression of music, movement and atmosphere. Discover the sound and energy of a live ARIA performance.
+    </p>
+
+    <!-- Replace this background with your performance video when ready -->
+    <div class="video-placeholder">
+      <a href="https://www.instagram.com/ariaviolin/" target="_blank" rel="noopener noreferrer" class="play-button" aria-label="Watch ARIA on Instagram">▶</a>
+    </div>
+    <div class="performance-caption">Live performance · Cape Town</div>
+  </section>
+
+  <section class="section occasions" id="occasions">
+    <div class="section-label">The setting</div>
+    <h2>Made for extraordinary moments.</h2>
+
+    <div class="occasion-grid">
+      <div class="occasion-card occasion-one">
+        <div class="occasion-text">
+          <h3>Weddings</h3>
+          <p>A distinctive musical experience for unforgettable celebrations.</p>
+        </div>
+      </div>
+
+      <div class="occasion-card occasion-two">
+        <div class="occasion-text">
+          <h3>Events</h3>
+          <p>Elevating corporate gatherings, private celebrations and occasions.</p>
+        </div>
+      </div>
+
+      <div class="occasion-card occasion-three">
+        <div class="occasion-text">
+          <h3>Extraordinary Places</h3>
+          <p>From beautiful landscapes to remarkable destinations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <div class="about-image"></div>
+    <div class="about-copy">
+      <div class="section-label">The artist</div>
+      <h2>Rooted in music. Inspired by possibility.</h2>
+      <p>
+        ARIA is a South African violinist and DJ whose musical journey brings together classical foundations, electronic music and a love of live performance.
+      </p>
+      <p>
+        With a background in classical violin and a passion for exploring sound, rhythm and improvisation, she creates performances that move beyond traditional musical boundaries.
+      </p>
+      <p>
+        Based in Cape Town, ARIA performs for weddings, events and unique destinations across South Africa and beyond.
+      </p>
+      <div class="about-signature">ARIA</div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-label">Bookings & enquiries</div>
+    <h2>Let's create something extraordinary.</h2>
+    <p>
+      For weddings, events, collaborations and performance enquiries, get in touch.
+    </p>
+    <a href="mailto:bookings@ariaviolin.com" class="button button-gold">Enquire About a Booking</a>
+    <a href="mailto:bookings@ariaviolin.com" class="contact-email">bookings@ariaviolin.com</a>
+  </section>
+
+  <footer>
+    <div class="footer-logo">ARIA</div>
+    <div>© <span id="year"></span> ARIA. All rights reserved.</div>
+    <div><a href="https://www.instagram.com/ariaviolin/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div>
+    <div>Cape Town · South Africa</div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
