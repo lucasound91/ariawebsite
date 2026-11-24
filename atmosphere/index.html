@@ -290,6 +290,132 @@
   }
 }
 
+/* HOW WE WORK */
+
+.work-section {
+  padding: 125px 9%;
+  background: var(--dark-soft);
+}
+
+.work-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.work-heading {
+  max-width: 750px;
+  margin-bottom: 75px;
+}
+
+.work-heading h2 {
+  font-family: var(--serif);
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 300;
+  line-height: 1.12;
+}
+
+.work-intro {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+  margin-top: 25px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+}
+
+.work-card {
+  padding: 45px 35px 30px 0;
+  border-top: 1px solid var(--gold);
+}
+
+.work-number {
+  font-family: var(--serif);
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 30px;
+}
+
+.work-card h3 {
+  font-family: var(--serif);
+  font-size: clamp(29px, 3vw, 38px);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.work-card h4 {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 25px;
+}
+
+.work-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+.work-ideal {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid var(--line);
+}
+
+.work-ideal-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+.work-ideal ul {
+  list-style: none;
+}
+
+.work-ideal li {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 2.2;
+}
+
+.work-ideal li::before {
+  content: '—';
+  color: var(--gold);
+  margin-right: 12px;
+}
+
+@media (max-width: 700px) {
+  .work-section {
+    padding: 95px 7%;
+  }
+
+  .work-heading {
+    margin-bottom: 50px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .work-card {
+    padding: 35px 0 10px;
+  }
+}
+
     @keyframes reveal {
       from {
         opacity: 0;
@@ -465,6 +591,100 @@
       for everything else to unfold.
     </div>
 
+  </div>
+</section>
+
+<section class="work-section" id="how-we-work">
+  <div class="work-inner">
+
+    <div class="work-heading">
+      <div class="eyebrow">How we work</div>
+      <h2>Music, thoughtfully curated for the moment.</h2>
+
+      <p class="work-intro">
+        Every space has its own character. Every experience has its own
+        energy. The music should reflect and enhance both.
+      </p>
+
+      <p class="work-intro">
+        ARIA Atmosphere works across two interconnected environments:
+      </p>
+    </div>
+
+    <div class="work-grid">
+
+      <div class="work-card">
+        <div class="work-number">01</div>
+
+        <h3>Setting the tone for spaces</h3>
+        <h4>Creating atmosphere through music.</h4>
+
+        <p>
+          Thoughtfully curated music that establishes the character
+          and atmosphere of a physical environment.
+        </p>
+
+        <p>
+          From calming ambient soundscapes to warm, uplifting
+          electronic music, each musical selection is considered
+          in relation to the space, its surroundings and the people within it.
+        </p>
+
+        <p>
+          Whether creating a welcoming arrival experience, an inviting
+          dining atmosphere or a sense of tranquillity in a wellness
+          space, music becomes an intentional part of the environment.
+        </p>
+
+        <div class="work-ideal">
+          <div class="work-ideal-label">Ideal for</div>
+          <ul>
+            <li>Boutique hotels and lodges</li>
+            <li>Restaurants and dining spaces</li>
+            <li>Spas and wellness facilities</li>
+            <li>Reception and relaxation areas</li>
+            <li>Hospitality and lifestyle spaces</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="work-number">02</div>
+
+        <h3>Setting the tone for experiences</h3>
+        <h4>Music designed around the journey.</h4>
+
+        <p>
+          Music thoughtfully curated around the intention, energy
+          and emotional progression of a particular experience.
+        </p>
+
+        <p>
+          From gentle ambient soundscapes for breathwork and meditation
+          to evolving musical journeys for movement, reflection and
+          connection, each selection is designed to complement the
+          activity and the experience being created.
+        </p>
+
+        <p>
+          Music can help establish a sense of calm, encourage emotional
+          openness, inspire movement or create space for deeper connection.
+        </p>
+
+        <div class="work-ideal">
+          <div class="work-ideal-label">Ideal for</div>
+          <ul>
+            <li>Yoga and meditation</li>
+            <li>Breathwork and movement</li>
+            <li>Journaling and reflection</li>
+            <li>Wellness retreats and workshops</li>
+            <li>Ceremonies and immersive experiences</li>
+            <li>Conscious gatherings and events</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
