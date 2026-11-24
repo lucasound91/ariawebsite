@@ -1016,6 +1016,95 @@
   }
 }
 
+/* WHO IT'S FOR */
+
+.audience-section {
+  padding: 130px 9%;
+  background: var(--atmosphere-ivory);
+  color: var(--atmosphere-ink);
+}
+
+.audience-inner {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.audience-heading {
+  max-width: 750px;
+  margin: 0 auto 75px;
+  text-align: center;
+}
+
+.audience-heading .eyebrow {
+  color: #85866f;
+}
+
+.audience-heading h2 {
+  font-family: var(--serif);
+  font-size: clamp(42px, 6vw, 66px);
+  font-weight: 300;
+  line-height: 1.12;
+  margin-top: 18px;
+}
+
+.audience-intro {
+  max-width: 620px;
+  margin: 25px auto 0;
+  color: var(--atmosphere-body);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 65px;
+}
+
+.audience-item {
+  padding: 30px 0;
+  border-top: 1px solid var(--atmosphere-border);
+}
+
+.audience-item h3 {
+  font-family: var(--serif);
+  font-size: clamp(25px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--atmosphere-ink);
+}
+
+.audience-closing {
+  max-width: 750px;
+  margin: 65px auto 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-style: italic;
+  line-height: 1.6;
+  color: #777c64;
+}
+
+@media (max-width: 700px) {
+  .audience-section {
+    padding: 95px 7%;
+  }
+
+  .audience-heading {
+    margin-bottom: 50px;
+  }
+
+  .audience-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .audience-closing {
+    margin-top: 45px;
+    font-size: 22px;
+  }
+}
+
   </style>
 </head>
 
@@ -1464,6 +1553,50 @@ document.querySelectorAll('.feeling-video-wrap').forEach(function (player) {
       energy of a space, soften our edges and bring us closer
       to ourselves, to one another and to the world around us.
     </p>
+
+  </div>
+</section>
+
+<section class="audience-section">
+  <div class="audience-inner">
+
+    <div class="audience-heading">
+      <span class="eyebrow">WHO IT'S FOR</span>
+
+      <h2>Designed for spaces and experiences that value connection.</h2>
+
+      <p class="audience-intro">
+        ARIA Atmosphere collaborates with people and businesses
+        who understand that the quality of an experience lies
+        in the details.
+      </p>
+    </div>
+
+    <div class="audience-grid">
+
+      <div class="audience-item">
+        <h3>Wellness retreats &amp; facilitators</h3>
+      </div>
+
+      <div class="audience-item">
+        <h3>Boutique hotels &amp; lodges</h3>
+      </div>
+
+      <div class="audience-item">
+        <h3>Restaurants &amp; hospitality spaces</h3>
+      </div>
+
+      <div class="audience-item">
+        <h3>Wellness events &amp; experiential brands</h3>
+      </div>
+
+    </div>
+
+    <div class="audience-closing">
+      Whether you're looking for a carefully curated playlist,
+      music for a specific experience or an immersive live
+      performance, ARIA Atmosphere can be tailored to your needs.
+    </div>
 
   </div>
 </section>
