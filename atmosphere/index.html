@@ -1276,10 +1276,19 @@
         </p>
       </div>
 
-      <div class="feeling-card">
-        <video class="feeling-video" controls playsinline preload="metadata">
-  <source src="/atmosphere/Atmosphere_FLOW.mp4" type="video/mp4">
-</video>
+      
+<div class="feeling-video-wrap">
+  <video class="feeling-video" playsinline preload="metadata">
+    <source src="/atmosphere/Atmosphere_FLOW.mp4" type="video/mp4">
+  </video>
+  <button class="feeling-play-button" type="button" aria-label="Play FLOW experience">
+    <span>▶</span>
+  </button>
+  <div class="feeling-progress">
+    <span class="feeling-progress-bar"></span>
+  </div>
+</div>
+
         <h3>FLOW</h3>
         <div class="feeling-mood">Expressive · Energising · Heart-opening</div>
         <p>
@@ -1290,10 +1299,19 @@
         </p>
       </div>
 
-      <div class="feeling-card">
-        <video class="feeling-video" controls playsinline preload="metadata">
-  <source src="/atmosphere/Atmosphere_GATHER.mp4" type="video/mp4">
-</video>
+      
+<div class="feeling-video-wrap">
+  <video class="feeling-video" playsinline preload="metadata">
+    <source src="/atmosphere/Atmosphere_GATHER.mp4" type="video/mp4">
+  </video>
+  <button class="feeling-play-button" type="button" aria-label="Play GATHER experience">
+    <span>▶</span>
+  </button>
+  <div class="feeling-progress">
+    <span class="feeling-progress-bar"></span>
+  </div>
+</div>
+
         <h3>GATHER</h3>
         <div class="feeling-mood">Uplifting · Warm · Connecting</div>
         <p>
@@ -1315,6 +1333,60 @@
   </div>
 
 </section>
+
+<script>
+document.querySelectorAll('.feeling-video-wrap').forEach(function (player) {
+  const video = player.querySelector('.feeling-video');
+  const button = player.querySelector('.feeling-play-button');
+  const icon = button.querySelector('span');
+  const progress = player.querySelector('.feeling-progress-bar');
+
+  function updateButton() {
+    if (video.paused) {
+      player.classList.remove('is-playing');
+      icon.textContent = '▶';
+      button.setAttribute('aria-label', 'Play experience');
+    } else {
+      player.classList.add('is-playing');
+      icon.textContent = 'Ⅱ';
+      button.setAttribute('aria-label', 'Pause experience');
+    }
+  }
+
+  button.addEventListener('click', function () {
+    if (video.paused) {
+      document.querySelectorAll('.feeling-video').forEach(function (otherVideo) {
+        if (otherVideo !== video) {
+          otherVideo.pause();
+        }
+      });
+
+      video.play().catch(function (error) {
+        console.log('Video playback could not start:', error);
+      });
+    } else {
+      video.pause();
+    }
+  });
+
+  video.addEventListener('play', updateButton);
+  video.addEventListener('pause', updateButton);
+
+  video.addEventListener('timeupdate', function () {
+    if (video.duration) {
+      const percentage = (video.currentTime / video.duration) * 100;
+      progress.style.width = percentage + '%';
+    }
+  });
+
+  video.addEventListener('ended', function () {
+    player.classList.remove('is-playing');
+    icon.textContent = '▶';
+    progress.style.width = '0%';
+    button.setAttribute('aria-label', 'Replay experience');
+  });
+});
+</script>
 
 </body>
 </html>
