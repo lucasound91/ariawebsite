@@ -1105,6 +1105,79 @@
   }
 }
 
+/* ABOUT ARIA */
+
+.about-section {
+  padding: 135px 9%;
+  background: #eee9df;
+  color: #302e29;
+}
+
+.about-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 85px;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.about-content .eyebrow {
+  color: #85866f;
+  margin-bottom: 22px;
+}
+
+.about-content h2 {
+  font-family: var(--serif);
+  font-size: clamp(42px, 5vw, 62px);
+  font-weight: 300;
+  line-height: 1.12;
+  margin-bottom: 30px;
+  color: #302e29;
+}
+
+.about-content p {
+  color: #716d64;
+  font-size: 13px;
+  line-height: 2.1;
+  margin-bottom: 20px;
+}
+
+.about-signature {
+  margin-top: 30px;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-style: italic;
+  color: #777c64;
+}
+
+@media (max-width: 800px) {
+  .about-section {
+    padding: 100px 7%;
+  }
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .about-image {
+    aspect-ratio: 5 / 4;
+    max-height: 520px;
+  }
+
+  .about-content h2 {
+    font-size: 46px;
+  }
+}
+
   </style>
 </head>
 
@@ -1479,6 +1552,52 @@
 
 </div>
 
+</section>
+
+<section class="about-section">
+  <div class="about-inner">
+
+    <img
+      class="about-image"
+      src="../images/aria-portrait-granite.jpg"
+      alt="ARIA violinist and musician Luca"
+    >
+
+    <div class="about-content">
+
+      <span class="eyebrow">ABOUT ARIA</span>
+
+      <h2>The artist behind the atmosphere.</h2>
+
+      <p>
+        ARIA is the creative expression of South African violinist
+        and musician Luca, bringing together classical musical
+        training, electronic music, composition and live performance.
+      </p>
+
+      <p>
+        With a music degree, decades of experience in musical
+        creation and curation, and a background spanning violin
+        performance and film music composition, Luca has developed
+        a deep appreciation for the emotional power of sound.
+      </p>
+
+      <p>
+        A lifelong love of nature and the outdoors further informs
+        this approach, with a particular appreciation for the
+        relationship between music, landscape and the human experience.
+      </p>
+
+      <p>
+        Whether curating a musical environment or performing live,
+        the intention remains the same: to bring depth, sensitivity
+        and expression to every note and every moment.
+      </p>
+
+      <div class="about-signature">ARIA</div>
+
+    </div>
+  </div>
 </section>
 
 <script>
