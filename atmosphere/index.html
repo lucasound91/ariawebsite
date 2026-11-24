@@ -12,6 +12,113 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+/* THE FORMATS */
+
+.formats-section {
+  padding: 130px 9%;
+  background: var(--atmosphere-ivory);
+  color: var(--atmosphere-ink);
+}
+
+.formats-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.formats-heading {
+  max-width: 750px;
+  margin-bottom: 75px;
+}
+
+.formats-heading .eyebrow {
+  color: #85866f;
+}
+
+.formats-heading h2 {
+  font-family: var(--serif);
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 300;
+  line-height: 1.12;
+}
+
+.formats-intro {
+  max-width: 650px;
+  margin-top: 25px;
+  color: var(--atmosphere-body);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.formats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+}
+
+.format-card {
+  border-top: 1px solid var(--atmosphere-olive);
+  padding-top: 35px;
+}
+
+.format-number {
+  font-family: var(--serif);
+  font-size: 48px;
+  font-weight: 300;
+  color: #85866f;
+  margin-bottom: 25px;
+}
+
+.format-card h3 {
+  font-family: var(--serif);
+  font-size: clamp(30px, 3.5vw, 42px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--atmosphere-ink);
+  margin-bottom: 12px;
+}
+
+.format-card h4 {
+  color: #777c64;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.format-card p {
+  color: var(--atmosphere-body);
+  font-size: 13px;
+  line-height: 2.1;
+  margin-bottom: 22px;
+}
+
+.format-accent {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid var(--atmosphere-border);
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  color: #777c64;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .formats-section {
+    padding: 95px 7%;
+  }
+
+  .formats-heading {
+    margin-bottom: 50px;
+  }
+
+  .formats-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+}
+
   <style>
     :root {
       --dark: #11110f;
@@ -812,6 +919,90 @@
             <li>Ceremonies and immersive experiences</li>
             <li>Conscious gatherings and events</li>
           </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="formats-section" id="formats">
+  <div class="formats-inner">
+
+    <div class="formats-heading">
+      <div class="eyebrow">The formats</div>
+
+      <h2>Different ways to bring music to life.</h2>
+
+      <p class="formats-intro">
+        Whether you're looking for a carefully curated musical
+        environment or an immersive live experience, ARIA Atmosphere
+        offers two ways to bring music into your space or offering.
+      </p>
+    </div>
+
+    <div class="formats-grid">
+
+      <div class="format-card">
+        <div class="format-number">01</div>
+
+        <h3>Playlist curation</h3>
+        <h4>Bespoke musical collections for spaces and experiences.</h4>
+
+        <p>
+          Carefully selected and sequenced music, curated around
+          the atmosphere of a venue or the intention of a particular
+          experience.
+        </p>
+
+        <p>
+          Drawing on decades of musical creation and curation,
+          each collection considers mood, texture, rhythm,
+          instrumentation and emotional progression.
+        </p>
+
+        <p>
+          From establishing a distinctive musical identity for a
+          boutique hotel to creating a soundtrack for a 60-minute
+          breathwork session, every playlist is thoughtfully considered.
+        </p>
+
+        <div class="format-accent">
+          A soundtrack shaped around the feeling you want to create.
+        </div>
+      </div>
+
+      <div class="format-card">
+        <div class="format-number">02</div>
+
+        <h3>Live experiences</h3>
+        <h4>An immersive expression of music.</h4>
+
+        <p>
+          For moments that call for something more, ARIA brings
+          together expressive live violin, electronic music and
+          atmospheric soundscapes to create immersive musical experiences.
+        </p>
+
+        <p>
+          Drawing on ambient textures, organic and melodic electronic
+          music, and improvisational expression, each performance
+          is shaped around the energy of the moment.
+        </p>
+
+        <p>
+          Live instrumentation may include violin, piano and sound
+          bowls, depending on the nature and intention of the experience.
+        </p>
+
+        <p>
+          From intimate meditation sessions and retreat ceremonies
+          to sunset gatherings and dining experiences, live music
+          adds another dimension to the atmosphere.
+        </p>
+
+        <div class="format-accent">
+          Music that becomes part of the experience itself.
         </div>
       </div>
 
