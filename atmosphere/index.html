@@ -224,6 +224,72 @@
       white-space: nowrap;
     }
 
+/* THE ART OF ATMOSPHERE */
+
+.art-section {
+  padding: 140px 12%;
+  background: var(--dark);
+}
+
+.art-inner {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.art-heading {
+  max-width: 720px;
+  margin-bottom: 55px;
+}
+
+.art-heading h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: clamp(42px, 6vw, 68px);
+  line-height: 1.12;
+}
+
+.art-copy {
+  max-width: 760px;
+}
+
+.art-copy p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2.1;
+  margin-bottom: 24px;
+}
+
+.art-statement {
+  margin-top: 65px;
+  padding: 35px 0 35px 35px;
+  border-left: 1px solid var(--gold);
+  max-width: 780px;
+  font-family: var(--serif);
+  font-size: clamp(25px, 3.2vw, 36px);
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--cream);
+}
+
+@media (max-width: 700px) {
+  .art-section {
+    padding: 95px 7%;
+  }
+
+  .art-heading {
+    margin-bottom: 35px;
+  }
+
+  .art-copy p {
+    font-size: 13px;
+  }
+
+  .art-statement {
+    margin-top: 45px;
+    padding-left: 22px;
+  }
+}
+
     @keyframes reveal {
       from {
         opacity: 0;
@@ -355,6 +421,52 @@
     </div>
 
   </header>
+
+<section class="art-section" id="art-of-atmosphere">
+  <div class="art-inner">
+
+    <div class="art-heading">
+      <div class="eyebrow">The art of atmosphere</div>
+      <h2>The invisible design element.</h2>
+    </div>
+
+    <div class="art-copy">
+      <p>
+        We carefully consider the spaces and experiences we create for people.
+        The architecture, lighting, textures, scents, food and natural
+        surroundings all contribute to how a place makes us feel.
+      </p>
+
+      <p>
+        Yet music is often an afterthought.
+      </p>
+
+      <p>
+        Music is an incredibly powerful, yet often overlooked, element of
+        experiential design. It has the ability to shift our emotional state,
+        invite presence, encourage connection and transform the atmosphere
+        of a space.
+      </p>
+
+      <p>
+        ARIA Atmosphere brings intention to the music within these environments.
+      </p>
+
+      <p>
+        Whether creating a sense of stillness during meditation, warmth around
+        a shared table, or a feeling of openness during a sunset experience,
+        music becomes an integral part of the experience rather than simply
+        background entertainment.
+      </p>
+    </div>
+
+    <div class="art-statement">
+      The music doesn't need to be the main act. It provides the foundation
+      for everything else to unfold.
+    </div>
+
+  </div>
+</section>
 
 </body>
 </html>
