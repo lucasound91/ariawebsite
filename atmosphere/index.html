@@ -870,14 +870,91 @@
 
 /* ATMOSPHERE EXPERIENCE VIDEOS */
 
+
+/* ATMOSPHERE EXPERIENCE VIDEOS */
+
+.feeling-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 32px;
+  overflow: hidden;
+  background: #dcd6c9;
+}
+
 .feeling-video {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 32px;
-  background: #dcd6c9;
 }
+
+.feeling-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 68px;
+  border: 1px solid rgba(255,255,255,.85);
+  border-radius: 50%;
+  background: rgba(35, 36, 30, .35);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: background .3s ease, transform .3s ease, opacity .3s ease;
+  z-index: 2;
+}
+
+.feeling-play-button:hover {
+  background: rgba(35, 36, 30, .65);
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.feeling-play-button span {
+  font-size: 21px;
+  line-height: 1;
+  margin-left: 3px;
+}
+
+.feeling-video-wrap.is-playing .feeling-play-button {
+  opacity: 0;
+}
+
+.feeling-video-wrap.is-playing:hover .feeling-play-button,
+.feeling-video-wrap.is-playing .feeling-play-button:focus {
+  opacity: 1;
+}
+
+.feeling-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,.35);
+  z-index: 3;
+}
+
+.feeling-progress-bar {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: #fff;
+  transition: width .1s linear;
+}
+
+@media (max-width: 800px) {
+  .feeling-play-button {
+    width: 60px;
+    height: 60px;
+  }
+}
+
 
   </style>
 </head>
@@ -1178,10 +1255,17 @@
 
     <div class="feeling-grid">
 
-      <div class="feeling-card">
-        <video class="feeling-video" controls playsinline preload="metadata">
-  <source src="/atmosphere/Atmosphere_STILL.mp4" type="video/mp4">
-</video>
+     <div class="feeling-video-wrap">
+  <video class="feeling-video" playsinline preload="metadata">
+    <source src="/atmosphere/Atmosphere_STILL.mp4" type="video/mp4">
+  </video>
+  <button class="feeling-play-button" type="button" aria-label="Play STILL experience">
+    <span>▶</span>
+  </button>
+  <div class="feeling-progress">
+    <span class="feeling-progress-bar"></span>
+  </div>
+</div>
         <h3>STILL</h3>
         <div class="feeling-mood">Quietening · Meditative · Introspective</div>
         <p>
