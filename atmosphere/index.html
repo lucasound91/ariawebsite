@@ -1178,6 +1178,106 @@
   }
 }
 
+/* FINAL INVITATION & FOOTER */
+
+.final-cta {
+  padding: 125px 9% 35px;
+  background: #191916;
+  color: #eee9df;
+  text-align: center;
+}
+
+.final-cta-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.final-cta .eyebrow {
+  color: #c6aa7b;
+  margin-bottom: 28px;
+}
+
+.final-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(46px, 7vw, 76px);
+  font-weight: 300;
+  line-height: 1.12;
+  margin-bottom: 30px;
+  color: #eee9df;
+}
+
+.final-cta p {
+  max-width: 570px;
+  margin: 0 auto 38px;
+  color: #aaa69c;
+  font-size: 13px;
+  line-height: 2.1;
+}
+
+.final-cta-button {
+  display: inline-block;
+  padding: 16px 32px;
+  border: 1px solid #c6aa7b;
+  color: #eee9df;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all .3s ease;
+}
+
+.final-cta-button:hover {
+  background: #c6aa7b;
+  color: #191916;
+}
+
+.final-footer {
+  max-width: 1150px;
+  margin: 115px auto 0;
+  padding-top: 25px;
+  border-top: 1px solid rgba(238,233,223,.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.final-footer a {
+  color: #aaa69c;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 1px;
+  transition: color .3s ease;
+}
+
+.final-footer a:hover {
+  color: #c6aa7b;
+}
+
+.final-footer-brand {
+  font-family: var(--serif);
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #eee9df;
+}
+
+.final-footer-copy {
+  color: #77756e;
+  font-size: 10px;
+}
+
+@media (max-width: 700px) {
+  .final-cta {
+    padding: 100px 7% 30px;
+  }
+
+  .final-footer {
+    margin-top: 75px;
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+
   </style>
 </head>
 
@@ -1661,6 +1761,46 @@
       <div class="about-signature">ARIA</div>
 
     </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta-inner">
+
+    <span class="eyebrow">ARIA ATMOSPHERE</span>
+
+    <h2>Let's create something meaningful.</h2>
+
+    <p>
+      Whether you're shaping a space, curating an experience
+      or looking for something a little different, we'd love
+      to hear what you have in mind.
+    </p>
+
+    <a class="final-cta-button"
+       href="mailto:bookings@ariaviolin.com?subject=ARIA%20Atmosphere%20Enquiry">
+      Make an enquiry
+    </a>
+
+  </div>
+
+  <div class="final-footer">
+
+    <div class="final-footer-brand">ARIA</div>
+
+    <a href="https://www.instagram.com/aria_violinist/"
+       target="_blank" rel="noopener">
+      INSTAGRAM
+    </a>
+
+    <a href="mailto:bookings@ariaviolin.com">
+      CONTACT
+    </a>
+
+    <div class="final-footer-copy">
+      © 2026 ARIA. All rights reserved.
+    </div>
+
   </div>
 </section>
 
